@@ -10,6 +10,6 @@ First, we'll allow users to create, retrieve, update, and delete pictures.
  - `cd` into the application's root folder
  - `bundle install`
  - I already added a model file, `picture.rb`, that defines the `Picture` class and inherits from `ActiveRecord::Base`
- - `rake ez:tables` to create a pictures table (I already wrote db/models.yml for you)
+ - `rake ez:tables` to create a pictures table (I already wrote `db/models.yml` for you)
  - `rake db:seed`
  - Start up your Rails Console and check out your pictures table. How many pictures are there currently?
