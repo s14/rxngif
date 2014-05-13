@@ -11,14 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031204226) do
+ActiveRecord::Schema.define(version: 20140513134040) do
 
   create_table "pictures", force: true do |t|
-    t.string   "source"
-    t.string   "caption"
-    t.boolean  "favorite"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "source"
+    t.string  "caption"
+    t.boolean "favorite", default: false
   end
 
 end
