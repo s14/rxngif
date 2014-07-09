@@ -170,11 +170,11 @@ Write some Ruby in the `create` action to:
  - fill in its column values by pulling the information the user typed into the form out of the `params` hash
  - save it
 
-Once we're done, we could display a confirmation message that the information was saved in the view template, but let's instead send the user back to the index page. Remember we can use
+Once we're done, we could display a confirmation message that the information was saved in a view template `create.html.erb`. Or, something new: we can use the following at the end of the `create` action to skip rendering a view, and instead send the user to a completely different RCAV -- in this case, the index page:
 
     redirect_to("http://localhost:3000/all_pictures")
 
-at the end of our action to send the user to a whole new URL rather than render a view template.
+This means we don't need a `create.html.erb` at all -- once Rails gets to the end of the `create` action, it will redirect the user's browser to the new URL instead of giving it an HTML response.
 
 ## Part III: Destroy (Remove a row from the table)
 
