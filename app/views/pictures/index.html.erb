@@ -1,5 +1,7 @@
 <h1>List of Pictures</h1>
 
+<p><a href="/new_picture_form">Add A New Picture</a></p>
+
 <ul>
   <% @pictures.each do |pic| %>
     <li>
@@ -8,6 +10,7 @@
       </a>
 
       <p><%= pic.caption %></p>
+      <p><a href="/edit_picture_form/<%= pic.id %>">Edit</a></p>
     </li>
   <% end %>
 </ul>
