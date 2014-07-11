@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140709175355) do
 
   create_table "pictures", force: true do |t|
-    t.string  "source"
+    t.text    "source"
     t.string  "caption"
     t.boolean "favorite"
   end

@@ -1,0 +1,13 @@
+<h1>List of Pictures</h1>
+
+<ul>
+  <% @pictures.each do |pic| %>
+    <li>
+      <a href="/picture_details/<%= pic.id %>">
+        <img src="<%= pic.source %>" width="50">
+      </a>
+
+      <p><%= pic.caption %></p>
+    </li>
+  <% end %>
+</ul>
