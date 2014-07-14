@@ -14,9 +14,11 @@
 ActiveRecord::Schema.define(version: 20140709175355) do
 
   create_table "pictures", force: true do |t|
-    t.text    "source"
-    t.string  "caption"
-    t.boolean "favorite"
+    t.text     "source"
+    t.string   "caption"
+    t.boolean  "favorite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

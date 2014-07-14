@@ -1,5 +1,13 @@
 <h1>Edit Picture #<%= @picture.id %> Form</h1>
 
+<% if @picture.errors.any? %>
+  <ul>
+    <% @picture.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <form action="/update_picture/<%= @picture.id %>">
   <div>
     <label for="the_caption">Caption:</label>
@@ -10,6 +18,6 @@
     <input id="image_url" type="text" name="source" value="<%= @picture.source %>">
   </div>
   <div>
-    <input type="submit" value="Create Picture">
+    <input type="submit" value="Update Picture">
   </div>
 </form>

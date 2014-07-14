@@ -4,6 +4,8 @@ class CreatePictures < ActiveRecord::Migration
       t.text :source
       t.string :caption
       t.boolean :favorite
+
+      t.timestamps
     end
   end
 end

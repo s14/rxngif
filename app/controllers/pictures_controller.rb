@@ -4,10 +4,11 @@ class PicturesController < ApplicationController
   end
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.order("created_at DESC")
   end
 
   def new
+    @picture = Picture.new
   end
 
   def edit
@@ -17,32 +18,26 @@ class PicturesController < ApplicationController
   def create
     # params = {"caption"=>"hi", "source"=>"there"}
 
-    p = Picture.new
-    p.caption = params[:caption]
-    p.source = params[:source]
-    p.save
+    @picture = Picture.new
+    @picture.caption = params[:caption]
+    @picture.source = params[:source]
 
-    redirect_to("/all_pictures", { :notice => "You successfully added a picture" })
+    if @picture.save == true
+      redirect_to("/all_pictures", { :notice => "You successfully added a picture" })
+    else
+      render('new')
+    end
   end
 
   def update
-    p = Picture.find_by({ :id => params[:id] })
-    p.caption = params[:caption]
-    p.source = params[:source]
-    p.save
+    @picture = Picture.find_by({ :id => params[:id] })
+    @picture.caption = params[:caption]
+    @picture.source = params[:source]
 
-    redirect_to("/picture_details/#{p.id}", { :notice => "You edited the picture" })
+    if @picture.save == true
+      redirect_to("/picture_details/#{@picture.id}", { :notice => "You edited the picture" })
+    else
+      render('edit')
+    end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
